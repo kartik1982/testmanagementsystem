@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="row center-align add-user">
+    <div class="col s12 m12 l12">
+      <div class="card-panel">
+        <h3 class="header">SIGN UP NEW USER</h3>
+        <div class="row">
+          <%= form_for(resource, as: resource_name, url: registration_path(resource_name),html: {class: "col s12"}) do |f| %>
+            <%= render "devise/shared/error_messages", resource: resource %>
+            <div class="row">
+              <div class="input-field col s6">
+                  <%= f.text_field :firstname, placeholder: "Enter first name", autofocus: true %>
+                  <%= f.label  :firstname%>
+              </div>
+              <div class="input-field col s6">
+                  <%= f.text_field :lastname, placeholder: "Enter last name" %>
+                  <%= f.label  :lastname%>
+              </div>
+            </div>
+            <div class="row">
+            <div class="input-field col s12">
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Enter email address"%>
+              <%= f.label  :email%>
+            </div>
+           </div>
+           <div class="row">
+           <div class="input-field col s6">
+             <%= f.password_field :password, autocomplete: "new-password", placeholder: "Password" %>
+             <% if @minimum_password_length %>
+             <em>(<%= @minimum_password_length %> characters minimum)</em>
+             <% end %><br />
+             <%= f.label :password %>
+           </div>
+           <div class="input-field col s6">
+             <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Confirm Password" %>
+             <% if @minimum_password_length %>
+             <em>(<%= @minimum_password_length %> characters minimum)</em>
+             <% end %><br />
+             <%= f.label :password_confirmation %>
+           </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+             <%= f.submit "Sign up", class: "btn orange waves-effect waves-light right" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>
+<%= render "devise/shared/links" %>

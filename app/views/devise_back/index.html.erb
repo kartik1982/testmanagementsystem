@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col s12">
+    <h3 class="center-align">User Directory</h3>
+  </div>
+</div>
+<ul class="collection">
+  <% @users.each do |user| %>
+  <li class="collection-item avatar">
+    <i class="material-icons circle">account_circle</i>
+    <span class="title"><%=user.firstname%> <%=user.lastname%></span><br>
+    <span class="title"><%=user.email%></span><br>
+    <span>Total Testsuites: 20, Total Testcases:50</span>
+    <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
+  </li>
+  <% end %>
+</ul>
